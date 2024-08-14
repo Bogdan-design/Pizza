@@ -1,13 +1,15 @@
 import * as React from 'react';
 import {Checkbox} from "@/components/index";
 
-type FilterCheckboxProps = {
+export type FilterCheckboxProps = {
     text: string;
     value: string
     andAdornment: React.ReactNode;
     onCheckedChange: (checked: boolean) => void;
     checked?: boolean;
 };
+
+
 export const FilterCheckbox: React.FC<FilterCheckboxProps> = ({
                                                                   checked, andAdornment, value, text, onCheckedChange
                                                               }) => {
