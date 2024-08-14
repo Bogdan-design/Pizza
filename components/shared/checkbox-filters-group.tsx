@@ -1,5 +1,7 @@
+'use client'
 import * as React from 'react';
-import {FilterCheckboxProps} from "@/components/index";
+import {Fragment} from 'react';
+import {FilterCheckbox, FilterCheckboxProps, Input} from "@/components/index";
 
 type Item = FilterCheckboxProps
 
@@ -16,10 +18,10 @@ type Props = {
 export const CheckboxFiltersGroup: React.FC<Props> = (
     {
         title,
-        limit =5,
+        limit = 5,
         defaultItems,
         items,
-        searchInputPlaceholder='Search...',
+        searchInputPlaceholder = 'Search...',
         onChange,
         defaultValue,
         className,
@@ -29,7 +31,23 @@ export const CheckboxFiltersGroup: React.FC<Props> = (
         <div className={className}>
             <p className={'font-bold mb-3'}>{title}</p>
 
-            
+            <div className={'mb-5'}>
+                <Input placeholder={searchInputPlaceholder} className={'bg-gray-100 border-none'}/>
+            </div>
+            <div className={'flex flex-col gap-4 max-h-96 pr-2 overflow-x-auto scrollbar'}>
+                {items.map((item, index) => (
+                    <Fragment key={index}>
+                        <FilterCheckbox
+                            text={item.text}
+                            value={item.value}
+                            andAdornment={item.andAdornment}
+                            checked={false}
+                            onCheckedChange={(ide) => console.log(ide)}
+                        />
+                    </Fragment>
+
+                ))}
+            </div>
 
         </div>
     );
