@@ -10,6 +10,7 @@ import {CheckboxFiltersGroup} from "@/components/shared/checkbox-filters-group";
 type Props = {
     className?: string;
 };
+
 export const Filters: React.FC<Props> = ({className}) => {
     return (
         <div className={className}>
@@ -106,9 +107,6 @@ export const Filters: React.FC<Props> = ({className}) => {
                                       }
                                   ]}
             />
-
-
-
         </div>
     );
 };
