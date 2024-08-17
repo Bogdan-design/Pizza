@@ -30,7 +30,7 @@ const categoryActiveId = useCategoryStore((state)=>state.activeId)
                 <Link className={cn(
                     'flex items-center font-bold h-11 rounded-2xl px-5',
                     categoryActiveId === id && 'bg-white shadow-md shadow-gray-200 text-primary',
-                )} key={index} href={''}>
+                )} key={index} href={`/#${name}`}>
                     {name}
                 </Link>
             ))}
