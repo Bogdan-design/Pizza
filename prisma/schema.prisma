@@ -43,8 +43,8 @@ model Product {
   name     String
   imageUrl String
 
-  ingredient Ingredient[]
-  items      ProductItem[]
+  ingredients Ingredient[]
+  items       ProductItem[]
 
   category   Category @relation(fields: [categoryId], references: [id])
   categoryId Int
@@ -151,7 +151,7 @@ model VerificationCode {
 
   cratedAt DateTime @default(now())
 
-  @@unique([userId,code])
+  @@unique([userId, code])
 }
 
 enum OrderStatus {
