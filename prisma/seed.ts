@@ -137,9 +137,9 @@ async function up() {
 
     await prisma.cartItem.createMany({
         data:[
-            // {
-            //     productItemId:1
-            // }
+            {
+                productItemId:1
+            }
         ]
     })
 
